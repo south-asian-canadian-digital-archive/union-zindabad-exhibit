@@ -1,0 +1,232 @@
+[
+	{
+		"name": "Cover",
+		"link": "https://pressbooks.pub/unionzindabad/front-matter/cover/"
+	},
+	{
+		"name": "South Asian Canadian Legacy Project",
+		"link": "https://pressbooks.pub/unionzindabad/front-matter/south-asian-canadian-labour-history-project/"
+	},
+	{
+		"name": "Preface",
+		"link": "https://pressbooks.pub/unionzindabad/front-matter/preface/"
+	},
+	{
+		"name": "Truth",
+		"link": "https://pressbooks.pub/unionzindabad/front-matter/truth/"
+	},
+	{
+		"name": "Introduction",
+		"link": "https://pressbooks.pub/unionzindabad/front-matter/introduction/"
+	},
+	{
+		"name": "I. The \"White Man's Province\"",
+		"link": "https://pressbooks.pub/unionzindabad/part/the-white-mans-province/",
+		"chapters": [
+			{
+				"name": "1. The 1907 Racist Riots",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/the-1907-racist-riots/"
+			}
+		]
+	},
+	{
+		"name": "II. Finding Work",
+		"link": "https://pressbooks.pub/unionzindabad/part/finding-work/",
+		"chapters": [
+			{
+				"name": "2. Migration",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/migration/"
+			},
+			{
+				"name": "3. A Rocky Mountain Community",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/golden-sikhs/"
+			},
+			{
+				"name": "4. Tod Inlet",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/tod-inlet/"
+			},
+			{
+				"name": "5. Gurdwaras and Sawmills",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/gurdwaras-and-work/"
+			},
+			{
+				"name": "6. Bunkhouse Life",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/bunkhouse-life/"
+			},
+			{
+				"name": "7. Wood Fuel Sales",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/wood-fuel/"
+			},
+			{
+				"name": "8. Labour Contractors",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/labour-contractors/"
+			},
+			{
+				"name": "9. Wages and Race",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/wages-and-race/"
+			}
+		]
+	},
+	{
+		"name": "III. Revolutionaries",
+		"link": "https://pressbooks.pub/unionzindabad/part/revolutionaries/",
+		"chapters": [
+			{
+				"name": "10. The Ghadar Movement",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/the-ghadar-movement/"
+			},
+			{
+				"name": "11. Industrial Workers of the World",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/industrial-workers-of-the-world/"
+			},
+			{
+				"name": "12. Husain Rahim",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/husain-rahim/"
+			}
+		]
+	},
+	{
+		"name": "IV. Searching for Working Class Unity",
+		"link": "https://pressbooks.pub/unionzindabad/part/searching-for-working-class-unity/",
+		"chapters": [
+			{
+				"name": "13. One Big Union",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/one-big-union/"
+			},
+			{
+				"name": "14. Fraser Mills Strike 1931",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/fraser-mills-strike-1931/"
+			},
+			{
+				"name": "15. Bosses or Brothers?",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/upward-mobility-or-union-membership/"
+			},
+			{
+				"name": "16. The CCF and NDP",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/the-ccf-and-ndp/"
+			}
+		]
+	},
+	{
+		"name": "V. International Woodworkers of America (IWA)",
+		"link": "https://pressbooks.pub/unionzindabad/part/international-woodworkers-of-america-iwa/",
+		"chapters": [
+			{
+				"name": "17. Darshan Singh Sangha",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/darshan-singh-sangha/"
+			},
+			{
+				"name": "18. Supporting the franchise",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/supporting-the-franchise/"
+			},
+			{
+				"name": "19. Colonialism, fascism and racism",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/colonialism-fascism-and-racism/"
+			},
+			{
+				"name": "20. Wins at the bargaining table",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/winning-at-the-bargaining-table/"
+			},
+			{
+				"name": "21. Proud IWA members",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/proud-iwa-members/"
+			}
+		]
+	},
+	{
+		"name": "VI. Women Workers and Union Activism",
+		"link": "https://pressbooks.pub/unionzindabad/part/women/",
+		"chapters": [
+			{
+				"name": "22. Women in the Informal Economy",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/women-workers-and-activism/"
+			},
+			{
+				"name": "23. Working for Wages",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/entering-the-formal-economy/"
+			},
+			{
+				"name": "24. Union Activism",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/union-activism/"
+			}
+		]
+	},
+	{
+		"name": "VII. New labour alliances",
+		"link": "https://pressbooks.pub/unionzindabad/part/new-labour-alliances/",
+		"chapters": [
+			{
+				"name": "25. Fighting racism",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/fighting-racism/"
+			},
+			{
+				"name": "26. Solidarity Movement",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/solidarity-movement/"
+			}
+		]
+	},
+	{
+		"name": "VIII. Canadian Farmworkers Union",
+		"link": "https://pressbooks.pub/unionzindabad/part/canadian-farmworkers-union/",
+		"chapters": [
+			{
+				"name": "27. Conditions for Farmworkers",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/working-conditions/"
+			},
+			{
+				"name": "28. Farmworkers Organizing Committee",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/farmworkers-organizing-committee-and-canadian-farmworkers-union/"
+			},
+			{
+				"name": "29. Organizing and Strikes",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/organizing-and-strikes/"
+			},
+			{
+				"name": "30. A Social Movement",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/a-social-movement/"
+			},
+			{
+				"name": "31. Union Organizing Through Art and Culture",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/culture/"
+			},
+			{
+				"name": "32. Racism and Backlash",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/racism-and-backlash/"
+			},
+			{
+				"name": "33. Achievements and Legacies",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/achievements-and-legacies/"
+			}
+		]
+	},
+	{
+		"name": "IX. New Economies",
+		"link": "https://pressbooks.pub/unionzindabad/part/new-economies/",
+		"chapters": [
+			{
+				"name": "34. Taxi Industry",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/taxis/"
+			},
+			{
+				"name": "35. Longshore",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/longshoring/"
+			},
+			{
+				"name": "36. Trucking",
+				"link": "https://pressbooks.pub/unionzindabad/chapter/trucking/"
+			}
+		]
+	},
+	{
+		"name": "Conclusion",
+		"link": "https://pressbooks.pub/unionzindabad/back-matter/conclusion/"
+	},
+	{
+		"name": "Union Zindabad! Interview Collection",
+		"link": "https://pressbooks.pub/unionzindabad/back-matter/appendix/"
+	},
+	{
+		"name": "Bibliography",
+		"link": "https://pressbooks.pub/unionzindabad/back-matter/bibliography/"
+	}
+]
