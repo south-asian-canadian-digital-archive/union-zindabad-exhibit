@@ -1,26 +1,41 @@
 <script lang="ts">
-  import site_contents from "$lib/utils/contents";
+  import ContentList from "$lib/utils/contents";
   import { page } from "$app/stores";
+  import { goto } from "$app/navigation";
 
   const findContent = (id: string) => {
-    for (let i = 0; i < site_contents.length; i++) {
-      if (site_contents[i].id === id) {
-        return site_contents[i].content;
+    for (let i = 0; i < ContentList.length; i++) {
+      if (ContentList[i].id === id) {
+        return ContentList[i];
       }
 
-      let chapters = site_contents[i].chapters;
+      let chapters = ContentList[i].chapters;
       if (chapters) {
         for (let j = 0; j < chapters.length; j++) {
           if (chapters[j].id === id) {
-            return chapters[j].content;
+            return chapters[j];
           }
         }
       }
     }
+
+    goto("/404");
   };
 
-  $: content = findContent($page.params.id);
+  $: siteContent = findContent($page.params.id);
 </script>
 
 
+<style type="postcss">
+	:global(h2.entry-title) {
+		@apply text-3xl text-center py-4;
+	}
 
+</style>
+
+<main class="w-1/2">
+
+  <div id="site-content" class="text-lg font-serif">
+    {@html siteContent?.content}
+  </div>
+</main>
