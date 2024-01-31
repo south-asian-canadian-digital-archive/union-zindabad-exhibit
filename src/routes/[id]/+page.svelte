@@ -35,13 +35,13 @@
 </style>
 
 
-<div class="absolute left-4 top-4">
+<div class="relative left-4 top-4">
 	<Navitagion current={$page.params.id} />
 </div>
 
 <main class="w-1/2">
 
-  <div id="site-content" class="text-lg font-serif">
+  <div id="site-content" class="text-lg font-serif text-center">
     {@html siteContent?.content}
   </div>
 
