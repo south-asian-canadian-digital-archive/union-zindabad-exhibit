@@ -2,6 +2,7 @@
   import ContentList from "$lib/utils/contents";
   import { page } from "$app/stores";
   import { goto } from "$app/navigation";
+  import Navitagion from "$lib/components/Navitagion.svelte";
 
   const findContent = (id: string) => {
     for (let i = 0; i < ContentList.length; i++) {
@@ -33,9 +34,15 @@
 
 </style>
 
+
+<div class="absolute left-4 top-4">
+	<Navitagion current={$page.params.id} />
+</div>
+
 <main class="w-1/2">
 
   <div id="site-content" class="text-lg font-serif">
     {@html siteContent?.content}
   </div>
+
 </main>
