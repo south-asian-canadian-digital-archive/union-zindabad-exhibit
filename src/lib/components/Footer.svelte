@@ -67,7 +67,9 @@
   ];
 </script>
 
-<footer class="bg-[#414042] py-24 px-6 flex justify-between items-end relative">
+<footer
+  class="bg-[#414042] lg:py-24 md:py-24 pb-24 pt-10 px-6 flex flex-col-reverse gap-4 lg:flex-row md:flex-row justify-between items-end relative"
+>
   <div class="flex flex-row gap-5 items-center pb-3">
     {#each sponsors as sponsor}
       <div class="w-auto">
@@ -78,9 +80,9 @@
     {/each}
   </div>
 
-  <div class="flex flex-col gap-4 w-fit">
+  <div class="flex flex-col gap-4 items-center lg:w-fit md:w-fit w-full">
     <p
-      class="uppercase self-end border-b border-b-[#ffce34] font-bold text-white text-lg w-fit pb-1"
+      class="uppercase lg:self-end md:self-end border-b border-b-[#ffce34] font-bold text-white text-lg w-fit pb-1"
     >
       GET IN TOUCH
     </p>
@@ -99,7 +101,15 @@
     </div>
   </div>
 
-  <div class="absolute bottom-6 text-white text-sm">
+  <div class="absolute bottom-6 text-white text-sm text-center self-center lg:self-start md:self-start w-full lg:w-fit md:w-fit">
+    <div class="lg:hidden md:hidden w-full flex items-center justify-center">
+      <p
+        class="border-t border-t-[#ffce34] font-bold text-transparent text-lg w-fit pb-1"
+      >
+        GET IN TOUCH
+      </p>
+    </div>
+
     Statement of Use and Takedown Policy | Media | © 2024 South Asian Canadian
     Digital Archive
   </div>
