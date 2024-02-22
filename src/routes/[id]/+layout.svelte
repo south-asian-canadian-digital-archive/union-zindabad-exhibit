@@ -1,6 +1,6 @@
 <script>
 </script>
 
-<div class="flex justify-center w-screen mb-12">
+<div class="flex justify-center mb-12">
   <slot />
 </div>

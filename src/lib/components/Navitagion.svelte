@@ -1,19 +1,20 @@
 <script lang="ts">
   import contents from "$lib/utils/contents";
-  import { page } from "$app/stores";
   import { goto } from "$app/navigation";
+  import { linear } from "svelte/easing";
+  import { slide } from "svelte/transition";
 
-  export let current = '';
+  export let current = "";
 
   const changePage = (id: string) => {
     goto(`../${id}`);
   };
 
   $: console.log(current);
-  
+
 </script>
 
-<div class="flex flex-col items-start">
+<div transition:slide={{axis: "x"}} class="flex flex-col items-start">
   {#each contents as item}
     <button
       class:font-bold={current === item.id}
@@ -22,17 +23,17 @@
       {item.name}
     </button>
 
-    <div class="pl-8 flex flex-col items-start">
-      {#if item.chapters}
+    {#if item.chapters}
+      <div class="pl-8 flex flex-col items-start">
         {#each item.chapters as chapter}
           <button
             class:font-bold={current === chapter.id}
             on:click={() => changePage(chapter.id)}
           >
-            {chapter.name} 
+            {chapter.name}
           </button>
         {/each}
-      {/if}
-    </div>
+      </div>
+    {/if}
   {/each}
 </div>

@@ -15,7 +15,7 @@
 </script>
 
 <nav
-  class="lg:h-24 md:h-24 my-6 mt-9 px-10 flex lg:flex-row md:flex-row flex-col items-center justify-between text-black font-semibold"
+  class="lg:h-28 md:h-24 pb-6 mt-9 px-10 flex lg:flex-row md:flex-row flex-col items-center justify-between text-black font-semibold shadow-md"
 >
   <div class="w-full lg:w-fit md:w-fit">
     <a class="" href="https://sacda.ca/index.php">
