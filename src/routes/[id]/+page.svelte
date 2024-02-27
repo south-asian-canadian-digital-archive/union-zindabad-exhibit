@@ -29,10 +29,32 @@
 
   let navOpen = true;
   let direction = 1;
+  let idx = 0.00;
+
+  let nextPage = ""
+  let prevPage = ""
+
+  $: {
+
+  }
+
 </script>
 
+<img src="../title.jpg" class="w-full object-cover" alt="" />
+
+<div class="w-full flex justify-between pt-4 px-12">
+  <button>
+    <span class="fa fa-arrow-left hover:scale-150 transition-all ease-in-out duration-300"></span>
+    prev
+  </button>
+  <button>
+    {idx}
+    next
+    <span class="fa fa-arrow-right hover:scale-150 transition-all ease-in-out duration-300"></span>
+  </button>
+</div>
+
 <main
-  transition:slide={{ duration: 500 }}
   class="relative flex justify-between pt-10 px-20 gap-10 transition-all ease-in-out duration-200"
 >
   <button
@@ -51,13 +73,13 @@
 
   {#if navOpen}
     <div class="whitespace-nowrap relative z-[100]">
-      <Navitagion current={$page.params.id} bind:direction />
+      <Navitagion current={$page.params.id} bind:direction bind:lastIdx={idx} />
     </div>
   {/if}
 
   {#key siteContent}
     <div
-      in:fly={{ x: 500*direction, duration: 500 }}
+      in:fly={{ x: 500 * direction, duration: 500 }}
       id="site-content"
       class="text-lg font-serif text-left flex justify-center transition-all ease-in-out duration-200 max-w-[50vw]"
     >
@@ -116,5 +138,9 @@
 
   :global(.site-content .footnotes > ol) {
     @apply list-decimal pl-4 text-base;
+  }
+
+  :global(.site-content a) {
+    @apply border-b border-b-black transition-all ease-in-out duration-200 hover:border-b-transparent;
   }
 </style>

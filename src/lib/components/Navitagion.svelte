@@ -8,7 +8,7 @@
   export let direction = 1;
 
   let expanded = {} as Record<string, boolean>;
-  let lastIdx = 0;
+  export let lastIdx = 0;
 
   const changePage = (id: string, idx: number) => {
     if (idx > lastIdx) direction = 1;
@@ -63,7 +63,7 @@
             class="pl-14 hover:bg-gray-200 bg-gray-50 px-4 py-1 rounded transition-all ease-in-out duration-200 w-full text-left"
             class:font-bold={current === chapter.id}
             class:bg-gray-200={current === chapter.id}
-            on:click={() => changePage(chapter.id, idxi + idxc / 100)}
+            on:click={() => changePage(chapter.id, idxi + (idxc + 1) / 100)}
           >
             {chapter.name}
           </button>
