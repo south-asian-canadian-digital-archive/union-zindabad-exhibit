@@ -3,7 +3,7 @@
   import { page } from "$app/stores";
   import { goto } from "$app/navigation";
   import Navitagion from "$lib/components/Navitagion.svelte";
-  import { fade, fly, slide } from "svelte/transition";
+  import { fade, fly, scale, slide } from "svelte/transition";
   import Tooltip from "$lib/components/Tooltip.svelte";
 
   const findContent = (id: string) => {
@@ -28,6 +28,7 @@
   $: siteContent = findContent($page.params.id);
 
   let navOpen = true;
+  let direction = 1;
 </script>
 
 <main
@@ -50,13 +51,13 @@
 
   {#if navOpen}
     <div class="whitespace-nowrap">
-      <Navitagion current={$page.params.id} />
+      <Navitagion current={$page.params.id} bind:direction />
     </div>
   {/if}
 
   {#key siteContent}
     <div
-      in:fade={{ duration: 500 }}
+      in:fly={{ x: 500*direction, duration: 500 }}
       id="site-content"
       class="text-lg font-serif text-left flex justify-center transition-all ease-in-out duration-200 max-w-[50vw]"
     >
@@ -67,7 +68,7 @@
 
 <style type="postcss">
   :global(h2.entry-title) {
-    @apply text-3xl text-center py-4 border-b-2 mb-4 px-4 whitespace-nowrap;
+    @apply text-3xl text-center py-4 border-b-2 mb-4 px-10 whitespace-nowrap;
   }
 
   :global(.entry-content h2) {
