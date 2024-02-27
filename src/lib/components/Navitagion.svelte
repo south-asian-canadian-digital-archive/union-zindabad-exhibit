@@ -1,7 +1,6 @@
 <script lang="ts">
   import contents from "$lib/utils/contents";
   import { goto } from "$app/navigation";
-  import { linear } from "svelte/easing";
   import { slide } from "svelte/transition";
   import { onMount } from "svelte";
 

@@ -50,7 +50,7 @@
   </button>
 
   {#if navOpen}
-    <div class="whitespace-nowrap">
+    <div class="whitespace-nowrap relative z-[100]">
       <Navitagion current={$page.params.id} bind:direction />
     </div>
   {/if}
