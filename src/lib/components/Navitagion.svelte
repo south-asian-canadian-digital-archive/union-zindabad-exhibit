@@ -63,9 +63,10 @@
       >
         {#each item.chapters as chapter, idxc}
           <button
-            class="pl-14 hover:bg-gray-200 bg-gray-50 px-4 py-1 rounded transition-all ease-in-out duration-200 w-full text-left"
-            class:font-bold={current === chapter.id}
+            class="pl-14 hover:bg-gray-200 px-4 py-1 rounded transition-all ease-in-out duration-200 w-full text-left"
+            class:font-semibold={current === chapter.id}
             class:bg-gray-200={current === chapter.id}
+            class:bg-gray-50={!(current === chapter.id)}
             on:click={() => changePage(chapter.id, idxi + (idxc + 1) / 100)}
           >
             {chapter.name}

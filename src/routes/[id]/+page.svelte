@@ -90,15 +90,27 @@
       initFocus = true;
       setTimeout(() => {
         initFocus = false;
-      }, 1200);
+      }, 2000);
     }, 1200);
   });
 </script>
 
-<!-- <img src="../title.jpg" class="w-full h-40 object-cover" alt="" /> -->
+<div class="w-full relative">
+  <img src="../title.jpg" class="w-full h-20 object-cover object-top" alt="" />
+  <div
+    class="absolute top-0 w-full flex items-center justify-center h-full text-5xl text-white font-semibold"
+  >
+    <button
+      on:click={() => goto("../")}
+      class="border-b-2 border-b-transparent hover:border-b-white transition-all duration-500"
+    >
+      Union Zindabad
+    </button>
+  </div>
+</div>
 
 <main
-  class="relative flex justify-between pt-10 px-20 gap-10 transition-all ease-in-out duration-200"
+  class="relative flex justify-between pt-12 px-20 gap-10 transition-all ease-in-out duration-200"
 >
   <button
     class="absolute left-4 transition-all ease-in-out duration-200"
@@ -171,7 +183,7 @@
   }
 
   :global(.site-content figcaption) {
-    @apply text-center text-sm;
+    @apply text-center text-sm pt-2;
   }
 
   :global(.site-content li) {
