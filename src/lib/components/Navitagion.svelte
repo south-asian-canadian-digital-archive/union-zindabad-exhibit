@@ -3,6 +3,7 @@
   import { goto } from "$app/navigation";
   import { slide } from "svelte/transition";
   import { onMount } from "svelte";
+  import { page } from "$app/stores";
 
   export let current = "";
   export let direction = 1;
@@ -16,8 +17,9 @@
     else direction = 0;
 
     lastIdx = idx;
+    current = id;
 
-    goto(`../${id}`);
+    goto(`/${id}`, { noScroll: true });
   };
 
   onMount(() => {
