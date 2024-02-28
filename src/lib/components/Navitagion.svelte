@@ -6,7 +6,7 @@
   import { page } from "$app/stores";
 
   export let current = "";
-  export let direction = 1;
+  export let direction;
 
   let expanded = {} as Record<string, boolean>;
   export let lastIdx = 0;

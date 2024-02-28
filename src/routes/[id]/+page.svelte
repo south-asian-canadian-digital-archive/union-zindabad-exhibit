@@ -139,21 +139,37 @@
       class="text-lg font-serif text-left flex flex-col items-center transition-all ease-in-out duration-200 max-w-[50vw]"
     >
       <div class="w-full flex justify-between">
-        <button on:click={() => goto(`../${prevPage}`, { noScroll: true })}>
-          <span
-            class="fa fa-arrow-left hover:scale-150 transition-all ease-in-out duration-300"
-          ></span>
-          Prev
-          <!-- {prevPage} -->
-        </button>
-        <!-- {pageIdx} -->
-        <button on:click={() => goto(`../${nextPage}`, { noScroll: true })}>
-          <!-- {nextPage} -->
-          Next
-          <span
-            class="fa fa-arrow-right hover:scale-150 transition-all ease-in-out duration-300"
-          ></span>
-        </button>
+        {#if prevPage !== null}
+          <button
+            on:click={() => {
+              direction = -1;
+              goto(`../${prevPage}`, { noScroll: true });
+            }}
+          >
+            <span
+              class="fa fa-arrow-left hover:scale-150 transition-all ease-in-out duration-300"
+            ></span>
+            Prev
+          </button>
+        {:else}
+          <div />
+        {/if}
+
+        {#if nextPage !== null}
+          <button
+            hidden={nextPage === null}
+            on:click={() => {
+              goto(`../${nextPage}`, { noScroll: true });
+            }}
+          >
+            Next
+            <span
+              class="fa fa-arrow-right hover:scale-150 transition-all ease-in-out duration-300"
+            ></span>
+          </button>
+        {:else}
+          <div />
+        {/if}
       </div>
 
       {@html siteContent?.content}

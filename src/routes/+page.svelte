@@ -36,7 +36,10 @@
     <p>Supported by the Province of British Columbia</p>
 
     <div class="w-full flex justify-center">
-      <button class="uppercase px-10 py-2 border border-black rounded-lg hover:translate-x-1 hover:-translate-y-1 transition-all duration-500" on:click={() => goto("./cover")}>Read book</button>
+      <button
+        class="uppercase px-10 py-2 border border-black rounded-lg hover:translate-x-1 hover:-translate-y-1 transition-all duration-500"
+        on:click={() => goto("./cover")}>Read book</button
+      >
     </div>
   </div>
 
