@@ -1,8 +1,17 @@
 <script lang="ts">
   export let text: string;
+  export let focus: boolean = false;
+
+  let tooltip: HTMLElement;
+
+  $: if (tooltip && focus) {
+    tooltip.focus();
+  } else if (tooltip) {
+    tooltip.blur();
+  }
 </script>
 
-<div class="tooltip">
+<div class="tooltip" class:hover={focus} bind:this={tooltip}>
   <slot />
 
   <span class="tooltiptext py-1">{text}</span>
@@ -41,7 +50,8 @@
     border-color: #555 transparent transparent transparent;
   }
 
-  .tooltip:hover .tooltiptext {
+  .tooltip:hover .tooltiptext,
+  .tooltip.hover .tooltiptext {
     visibility: visible;
     opacity: 1;
   }

@@ -5,10 +5,13 @@
   import Navitagion from "$lib/components/Navitagion.svelte";
   import { fade, fly, scale, slide } from "svelte/transition";
   import Tooltip from "$lib/components/Tooltip.svelte";
+  import { onMount } from "svelte";
 
+  let pageIdx = 0;
   const findContent = (id: string) => {
     for (let i = 0; i < ContentList.length; i++) {
       if (ContentList[i].id === id) {
+        pageIdx = i;
         return ContentList[i];
       }
 
@@ -16,6 +19,7 @@
       if (chapters) {
         for (let j = 0; j < chapters.length; j++) {
           if (chapters[j].id === id) {
+            pageIdx = i + (j + 1) / 100;
             return chapters[j];
           }
         }
@@ -25,34 +29,73 @@
     goto("/404");
   };
 
+  const findNext = (idx: number) => {
+    if (idx < ContentList.length - 1) {
+      if (idx > Math.floor(idx)) {
+        let chapters = ContentList[Math.floor(idx)].chapters;
+        if (!chapters) return ContentList[Math.floor(idx)].id;
+
+        if (Number.parseInt(idx.toString().split(".")[1]) === chapters.length) {
+          return ContentList[Math.floor(idx) + 1].id;
+        }
+
+        return chapters[Number.parseInt(idx.toString().split(".")[1])].id;
+      }
+      let nextChapters = ContentList[Math.floor(idx)].chapters;
+      if (nextChapters) {
+        return nextChapters[0].id;
+      }
+
+      return ContentList[Math.floor(idx) + 1].id;
+    } else {
+      return null;
+    }
+  };
+
+  const findPrev = (idx: number) => {
+    if (idx > 0) {
+      if (idx > Math.floor(idx)) {
+        let chapters = ContentList[Math.floor(idx)].chapters;
+        if (!chapters) return ContentList[Math.floor(idx)].id;
+
+        if (Number.parseInt(idx.toString().split(".")[1]) === 1) {
+          return ContentList[Math.floor(idx)].id;
+        }
+
+        return chapters[Number.parseInt(idx.toString().split(".")[1]) - 2].id;
+      }
+      let prevChapters = ContentList[Math.floor(idx) - 1].chapters;
+      if (prevChapters) {
+        return prevChapters[prevChapters.length - 1].id;
+      }
+
+      return ContentList[Math.floor(idx) - 1].id;
+    } else {
+      return null;
+    }
+  };
+
   $: siteContent = findContent($page.params.id);
+  $: nextPage = findNext(pageIdx);
+  $: prevPage = findPrev(pageIdx);
 
   let navOpen = true;
   let direction = 1;
-  let idx = 0.00;
+  let initFocus = false;
 
-  let nextPage = ""
-  let prevPage = ""
+  onMount(() => {
+    setTimeout(() => {
+      navOpen = false;
 
-  $: {
-
-  }
-
+      initFocus = true;
+      setTimeout(() => {
+        initFocus = false;
+      }, 1200);
+    }, 1200);
+  });
 </script>
 
-<img src="../title.jpg" class="w-full object-cover" alt="" />
-
-<div class="w-full flex justify-between pt-4 px-12">
-  <button>
-    <span class="fa fa-arrow-left hover:scale-150 transition-all ease-in-out duration-300"></span>
-    prev
-  </button>
-  <button>
-    {idx}
-    next
-    <span class="fa fa-arrow-right hover:scale-150 transition-all ease-in-out duration-300"></span>
-  </button>
-</div>
+<!-- <img src="../title.jpg" class="w-full h-40 object-cover" alt="" /> -->
 
 <main
   class="relative flex justify-between pt-10 px-20 gap-10 transition-all ease-in-out duration-200"
@@ -63,7 +106,7 @@
       navOpen = !navOpen;
     }}
   >
-    <Tooltip text={navOpen ? "Close" : "Navigation"}>
+    <Tooltip bind:focus={initFocus} text={navOpen ? "Close" : "Navigation"}>
       <span
         class="fa fa-angle-double-left hover:bg-gray-200 p-3 rounded-full transition-all ease-in-out duration-200"
         class:rotate-180={navOpen}
@@ -73,7 +116,7 @@
 
   {#if navOpen}
     <div class="whitespace-nowrap relative z-[100]">
-      <Navitagion current={$page.params.id} bind:direction bind:lastIdx={idx} />
+      <Navitagion current={$page.params.id} bind:direction />
     </div>
   {/if}
 
@@ -81,8 +124,26 @@
     <div
       in:fly={{ x: 500 * direction, duration: 500 }}
       id="site-content"
-      class="text-lg font-serif text-left flex justify-center transition-all ease-in-out duration-200 max-w-[50vw]"
+      class="text-lg font-serif text-left flex flex-col items-center transition-all ease-in-out duration-200 max-w-[50vw]"
     >
+      <div class="w-full flex justify-between">
+        <button on:click={() => goto(`../${prevPage}`, { noScroll: true })}>
+          <span
+            class="fa fa-arrow-left hover:scale-150 transition-all ease-in-out duration-300"
+          ></span>
+          Prev
+          <!-- {prevPage} -->
+        </button>
+        <!-- {pageIdx} -->
+        <button on:click={() => goto(`../${nextPage}`, { noScroll: true })}>
+          <!-- {nextPage} -->
+          Next
+          <span
+            class="fa fa-arrow-right hover:scale-150 transition-all ease-in-out duration-300"
+          ></span>
+        </button>
+      </div>
+
       {@html siteContent?.content}
     </div>
   {/key}
@@ -90,7 +151,7 @@
 
 <style type="postcss">
   :global(h2.entry-title) {
-    @apply text-3xl text-center py-4 border-b-2 mb-4 px-10 whitespace-nowrap;
+    @apply text-5xl text-center py-4 border-b-2 mb-4 px-10 whitespace-nowrap;
   }
 
   :global(.entry-content h2) {

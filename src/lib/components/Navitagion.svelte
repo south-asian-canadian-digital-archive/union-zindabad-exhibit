@@ -25,7 +25,7 @@
   onMount(() => {
     expanded = {};
     for (let i = 0; i < contents.length; i++) {
-      if (contents[i].chapters) expanded[contents[i].id] = true;
+      if (contents[i].chapters) expanded[contents[i].id] = false;
     }
   });
 </script>
@@ -38,8 +38,9 @@
     <button
       class="hover:bg-gray-200 px-4 py-1 rounded transition-all ease-in-out duration-200 w-full text-left flex justify-between items-center"
       class:font-semibold={current === item.id}
-      class:bg-gray-100={item.chapters}
-      class:bg-gray-50={!item.chapters}
+      class:bg-gray-200={current === item.id}
+      class:bg-gray-100={item.chapters && !(current === item.id)}
+      class:bg-gray-50={!item.chapters && !(current === item.id)}
       on:click={() => changePage(item.id, idxi)}
     >
       {item.name}
@@ -49,7 +50,7 @@
           on:click|stopPropagation={() => {
             expanded[item.id] = !expanded[item.id];
           }}
-          class="fa fa-angle-right transition-all ease-in-out duration-300"
+          class="fa fa-angle-right transition-all ease-in-out duration-300 hover:scale-125"
           class:rotate-90={expanded[item.id]}
         ></button>
       {/if}
