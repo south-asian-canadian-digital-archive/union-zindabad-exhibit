@@ -12,7 +12,7 @@
 </script>
 
 <div class="tooltip" class:hover={focus} bind:this={tooltip}>
-  <div class="rotate-90 lg:rotate-0 md:rotate-0">
+  <div class="-rotate-90 lg:rotate-0 md:rotate-0">
     <slot />
   </div>
 
