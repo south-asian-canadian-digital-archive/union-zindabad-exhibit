@@ -4,9 +4,10 @@
   import { slide } from "svelte/transition";
   import { onMount } from "svelte";
   import { page } from "$app/stores";
-  import { direction } from "$lib/utils/nav.store"
+  import { direction } from "$lib/utils/nav.store";
 
   export let current = "";
+  export let mobile = false;
   // export let direction;
 
   let expanded = {} as Record<string, boolean>;
@@ -32,7 +33,7 @@
 </script>
 
 <div
-  transition:slide={{ axis: "x" }}
+  transition:slide={{ axis: mobile ? "y" : "x" }}
   class="flex flex-col gap-1 items-start w-full"
 >
   {#each contents as item, idxi}

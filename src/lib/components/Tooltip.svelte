@@ -12,7 +12,9 @@
 </script>
 
 <div class="tooltip" class:hover={focus} bind:this={tooltip}>
-  <slot />
+  <div class="rotate-90 lg:rotate-0 md:rotate-0">
+    <slot />
+  </div>
 
   <span class="tooltiptext py-1">{text}</span>
 </div>
