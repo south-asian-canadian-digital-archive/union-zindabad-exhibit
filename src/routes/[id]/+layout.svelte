@@ -173,7 +173,7 @@
 
 <style type="postcss">
   :global(h2.entry-title) {
-    @apply text-5xl text-center py-4 border-b-2 mb-4 px-10 lg:whitespace-nowrap md:whitespace-nowrap;
+    @apply text-5xl text-center py-4 border-b-2 mb-4 px-10;
   }
 
   :global(.entry-content h2) {

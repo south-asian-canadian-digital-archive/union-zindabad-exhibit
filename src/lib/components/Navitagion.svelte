@@ -24,8 +24,7 @@
     goto(`/${id}`, { noScroll: true });
   };
 
-  onMount(() => {
-    expanded = {};
+  const updateExpandedNav = () => {
     for (let i = 0; i < contents.length; i++) {
       let chapters = contents[i].chapters;
       if (chapters) {
@@ -38,6 +37,14 @@
         }
       }
     }
+    expanded = expanded;
+  };
+
+  $: current, updateExpandedNav();
+
+  onMount(() => {
+    expanded = {};
+    updateExpandedNav();
   });
 </script>
 
