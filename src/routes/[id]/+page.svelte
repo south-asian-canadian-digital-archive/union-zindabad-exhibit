@@ -6,6 +6,7 @@
   import { fade, fly, scale, slide } from "svelte/transition";
   import Tooltip from "$lib/components/Tooltip.svelte";
   import { onMount } from "svelte";
+  import { direction } from "$lib/utils/nav.store"
 
   let pageIdx = 0;
   const findContent = (id: string) => {
@@ -80,7 +81,7 @@
   $: prevPage = findPrev(pageIdx);
 
   let navOpen = true;
-  let direction = 1;
+  // let direction = 1;
   let initFocus = false;
 
   onMount(() => {
@@ -128,13 +129,13 @@
 
   {#if navOpen}
     <div class="whitespace-nowrap relative z-[100]">
-      <Navitagion current={$page.params.id} bind:direction />
+      <Navitagion current={$page.params.id} />
     </div>
   {/if}
 
   {#key siteContent}
     <div
-      in:fly={{ x: 500 * direction, duration: 500 }}
+      in:fly={{ x: 500 * $direction, duration: 500 }}
       id="site-content"
       class="text-lg font-serif text-left flex flex-col items-center transition-all ease-in-out duration-200 max-w-[50vw]"
     >
@@ -142,7 +143,7 @@
         {#if prevPage !== null}
           <button
             on:click={() => {
-              direction = -1;
+              $direction = -1;
               goto(`../${prevPage}`, { noScroll: true });
             }}
           >
@@ -159,6 +160,7 @@
           <button
             hidden={nextPage === null}
             on:click={() => {
+              $direction = 1;
               goto(`../${nextPage}`, { noScroll: true });
             }}
           >

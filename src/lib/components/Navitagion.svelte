@@ -4,17 +4,18 @@
   import { slide } from "svelte/transition";
   import { onMount } from "svelte";
   import { page } from "$app/stores";
+  import { direction } from "$lib/utils/nav.store"
 
   export let current = "";
-  export let direction;
+  // export let direction;
 
   let expanded = {} as Record<string, boolean>;
   export let lastIdx = 0;
 
   const changePage = (id: string, idx: number) => {
-    if (idx > lastIdx) direction = 1;
-    else if (idx < lastIdx) direction = -1;
-    else direction = 0;
+    if (idx > lastIdx) $direction = 1;
+    else if (idx < lastIdx) $direction = -1;
+    else $direction = 1;
 
     lastIdx = idx;
     current = id;
