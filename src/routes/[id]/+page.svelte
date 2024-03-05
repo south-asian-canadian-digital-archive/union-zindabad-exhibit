@@ -30,4 +30,8 @@
   $: siteContent = findContent($page.params.id);
 </script>
 
-{@html siteContent?.content}
+{#if $page.params.id === "media"}
+  <div>media</div>
+{:else}
+  {@html siteContent?.content}
+{/if}
