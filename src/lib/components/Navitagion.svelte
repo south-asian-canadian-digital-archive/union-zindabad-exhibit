@@ -27,7 +27,16 @@
   onMount(() => {
     expanded = {};
     for (let i = 0; i < contents.length; i++) {
-      if (contents[i].chapters) expanded[contents[i].id] = false;
+      let chapters = contents[i].chapters;
+      if (chapters) {
+        expanded[contents[i].id] = false;
+        for (let j = 0; j < chapters.length; j++) {
+          if (chapters[j].id === current) {
+            expanded[contents[i].id] = true;
+            break;
+          }
+        }
+      }
     }
   });
 </script>
