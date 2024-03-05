@@ -38,7 +38,7 @@
 >
   {#each contents as item, idxi}
     <button
-      class="hover:bg-gray-200 px-4 py-1 rounded transition-all ease-in-out duration-200 w-full text-left flex justify-between items-center"
+      class="hover:bg-gray-200 px-4 py-1 rounded transition-all ease-in-out duration-200 w-full lg:whitespace-nowrap max-w-[90vw] whitespace-normal text-left flex justify-between items-center"
       class:font-semibold={current === item.id}
       class:bg-gray-200={current === item.id}
       class:bg-gray-100={item.chapters && !(current === item.id)}
@@ -65,7 +65,7 @@
       >
         {#each item.chapters as chapter, idxc}
           <button
-            class="pl-14 hover:bg-gray-200 px-4 py-1 rounded transition-all ease-in-out duration-200 w-full text-left"
+            class="pl-14 hover:bg-gray-200 px-4 py-1 rounded transition-all ease-in-out duration-200 w-full text-left lg:whitespace-nowrap max-w-[90vw] whitespace-normal"
             class:font-semibold={current === chapter.id}
             class:bg-gray-200={current === chapter.id}
             class:bg-gray-50={!(current === chapter.id)}

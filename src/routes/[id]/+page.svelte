@@ -118,12 +118,12 @@
   class="relative flex lg:flex-row md:flex-row flex-col justify-between pt-12 lg:px-20 md:px-20 gap-10 transition-all ease-in-out duration-200"
 >
   <button
-    class="absolute lg:left-4 md:left-4 lg:top-auto lg:w-fit top-0 w-full flex items-center justify-center transition-all ease-in-out duration-200"
+    class="absolute lg:left-4 md:left-4 lg:top-auto lg:w-fit top-2 w-full flex items-center justify-center transition-all ease-in-out duration-200"
     on:click={() => {
       navOpen = !navOpen;
     }}
   >
-    <span class="lg:hidden md:hidden">Contents</span>
+    <span class="lg:hidden md:hidden font-semibold text-lg">Contents</span>
     <Tooltip bind:focus={initFocus} text={navOpen ? "Close" : "Navigation"}>
       <span
         class="fa fa-angle-double-left hover:bg-gray-200 p-3 rounded-full transition-all ease-in-out duration-200"
