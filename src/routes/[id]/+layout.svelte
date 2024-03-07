@@ -99,6 +99,10 @@
     </div>
   </button>
 
+  <!-- <div class="px-4 w-full"> -->
+    <NextPrevNav {nextPage} {prevPage} />
+  <!-- </div> -->
+
   <main
     class="relative flex lg:flex-row md:flex-row flex-col justify-between pt-12 lg:px-20 md:px-20 gap-10 transition-all ease-in-out duration-200"
   >
@@ -108,17 +112,23 @@
         navOpen = !navOpen;
       }}
     >
-      <span class="lg:hidden md:hidden font-semibold text-lg">Contents</span>
+      <!-- w-3 break-words uppercase top-0 pt-10 -->
+      <span
+        class="absolute from-[#9b4d3a] text-white bg-gradient-to-l to-[#737f59] p-2 pr-9 rounded-t-lg -rotate-90 mt-24 bottome-0 uppercase"
+        >Contents</span
+      >
       <Tooltip bind:focus={initFocus} text={navOpen ? "Close" : "Navigation"}>
         <span
-          class="fa fa-angle-double-left hover:bg-gray-200 p-3 rounded-full transition-all ease-in-out duration-200"
+          class="fa fa-angle-double-left lg:text-white p-3 rounded-full transition-all ease-in-out duration-200"
           class:rotate-180={navOpen}
         ></span>
       </Tooltip>
     </button>
 
     {#if navOpen}
-      <div class="hidden lg:flex md:flex whitespace-nowrap relative z-[100]">
+      <div
+        class="hidden lg:flex md:flex whitespace-nowrap relative z-[100] -ml-5 -mt-1"
+      >
         <Navitagion current={$page.params.id} />
       </div>
 
@@ -131,14 +141,12 @@
       <div
         in:fly={{ x: 500 * $direction, duration: 500 }}
         id="site-content"
-        class="text-lg font-serif text-left flex flex-col items-center transition-all ease-in-out duration-200 lg:max-w-[50vw] md:max-w-[50vw] max-w-[90vw]"
+        class="text-lg text-left flex flex-col items-center transition-all ease-in-out duration-200 lg:max-w-[65vw] md:max-w-[65vw] max-w-[90vw]"
       >
-        <NextPrevNav {nextPage} {prevPage} />
-
         <slot />
 
         <div class="w-full pt-6">
-          <NextPrevNav {nextPage} {prevPage} />
+          <NextPrevNav full {nextPage} {prevPage} />
         </div>
       </div>
     {/key}
@@ -176,7 +184,7 @@
     @apply rounded-lg;
   }
 
-  :global(.site-content) {
+  :global(.site-content, .entry-content) {
     @apply flex flex-col items-center font-serif;
   }
 
