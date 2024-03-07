@@ -7,6 +7,7 @@
   import Tooltip from "$lib/components/Tooltip.svelte";
   import { onMount } from "svelte";
   import { direction, pageIdx } from "$lib/utils/nav.store";
+  import NextPrevNav from "$lib/components/NextPrevNav.svelte";
 
   // let $pageIdx = 0;
 
@@ -73,14 +74,18 @@
       }, 2000);
     }, 1200);
   });
+
+  let scrollY: number;
 </script>
+
+<svelte:window bind:scrollY />
 
 <div class="flex flex-col items-center mb-12">
   <button on:click={() => goto("../")} class="w-full relative">
     <img
       src="../title.jpg"
       id="banner"
-      class="w-full h-20 lg:object-cover lg:object-top"
+      class="w-full h-20 lg:object-cover lg:object-top md:object-cover md:object-top"
       alt=""
     />
     <div
@@ -98,7 +103,7 @@
     class="relative flex lg:flex-row md:flex-row flex-col justify-between pt-12 lg:px-20 md:px-20 gap-10 transition-all ease-in-out duration-200"
   >
     <button
-      class="absolute lg:left-4 md:left-4 lg:top-auto lg:w-fit top-2 w-full flex items-center justify-center transition-all ease-in-out duration-200"
+      class="absolute lg:left-4 md:left-4 lg:w-fit md:w-fit top-2 md:mt-8 md:pt-0.5 lg:mt-8 lg:pt-0.5 w-full flex items-center justify-center transition-all ease-in-out duration-200"
       on:click={() => {
         navOpen = !navOpen;
       }}
@@ -128,50 +133,37 @@
         id="site-content"
         class="text-lg font-serif text-left flex flex-col items-center transition-all ease-in-out duration-200 lg:max-w-[50vw] md:max-w-[50vw] max-w-[90vw]"
       >
-        <div class="w-full flex justify-between">
-          {#if prevPage !== null}
-            <button
-              class="group"
-              on:click={() => {
-                $direction = -1;
-                goto(`../${prevPage}`, { noScroll: true });
-              }}
-            >
-              <span
-                class="fa fa-arrow-left group-hover:-translate-x-2 transition-all ease-in-out duration-300"
-              ></span>
-              Prev
-            </button>
-          {:else}
-            <div />
-          {/if}
-
-          {#if nextPage !== null}
-            <button
-              hidden={nextPage === null}
-              class="group"
-              on:click={() => {
-                $direction = 1;
-                goto(`../${nextPage}`, { noScroll: true });
-              }}
-            >
-              Next
-              <span
-                class="fa fa-arrow-right group-hover:translate-x-2 transition-all ease-in-out duration-300"
-              ></span>
-            </button>
-          {:else}
-            <div />
-          {/if}
-        </div>
+        <NextPrevNav {nextPage} {prevPage} />
 
         <slot />
+
+        <div class="w-full pt-6">
+          <NextPrevNav {nextPage} {prevPage} />
+        </div>
       </div>
     {/key}
+
+    {#if scrollY !== 0}
+      <button
+        transition:fade
+        class="fixed right-6 bottom-6 z-[999] rounded-full object-cover bg-slate-100 py-0.5 group hover:-translate-y-1 transition-all duration-500"
+        on:click={() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+      >
+        <span
+          class="fa fa-angle-left rotate-90 py-4 px-5 group-hover:scale-110 transition-all duration-500"
+        ></span>
+      </button>
+    {/if}
   </main>
 </div>
 
 <style type="postcss">
+  :global(.site-content) {
+    font-family: "brandon grotesque", sans-serif !important;
+  }
+
   :global(h2.entry-title) {
     @apply text-5xl text-center py-4 border-b-2 mb-4 px-10;
   }
@@ -185,7 +177,7 @@
   }
 
   :global(.site-content) {
-    @apply flex flex-col items-center;
+    @apply flex flex-col items-center font-serif;
   }
 
   :global(.site-content figure) {
