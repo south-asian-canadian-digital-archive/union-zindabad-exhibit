@@ -1,3 +1,9 @@
+@import url("https://use.typekit.net/vns2lps.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+	font-family: 'brandon grotesque', sans-serif;
+}
