@@ -146,7 +146,7 @@
         <slot />
 
         <div class="w-full pt-6">
-          <NextPrevNav full {nextPage} {prevPage} />
+          <NextPrevNav scrollOnNav full {nextPage} {prevPage} />
         </div>
       </div>
     {/key}
@@ -173,7 +173,7 @@
   }
 
   :global(h2.entry-title) {
-    @apply text-5xl text-center py-4 border-b-2 mb-4 px-10;
+    @apply text-5xl text-center pb-6 px-10;
   }
 
   :global(.entry-content h2) {

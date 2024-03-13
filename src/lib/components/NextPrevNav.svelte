@@ -5,6 +5,7 @@
   export let nextPage: string | null;
   export let prevPage: string | null;
   export let full = false;
+  export let scrollOnNav = false;
 </script>
 
 <div class="w-full flex justify-between">
@@ -15,7 +16,7 @@
       class:rounded-br-lg={!full}
       on:click={() => {
         $direction = -1;
-        goto(`../${prevPage}`, { noScroll: true });
+        goto(`../${prevPage}`, { noScroll: !scrollOnNav });
       }}
     >
       <span
@@ -35,7 +36,7 @@
       class:rounded-bl-lg={!full}
       on:click={() => {
         $direction = 1;
-        goto(`../${nextPage}`, { noScroll: true });
+        goto(`../${nextPage}`, { noScroll: !scrollOnNav });
       }}
     >
       Next Page
