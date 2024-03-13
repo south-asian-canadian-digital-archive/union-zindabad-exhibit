@@ -42,6 +42,9 @@ def get_images():
                 with open(f"images/{img_name}", "wb") as handler:
                     handler.write(img_data)
                 img["src"] = f"../images/{img_name}"
+
+                img["srcset"] = ""
+
             page["content"] = str(soup)
 
         if "chapters" in page.keys():
@@ -56,6 +59,7 @@ def get_images():
                     with open(f"images/{img_name}", "wb") as handler:
                         handler.write(img_data)
                     img["src"] = f"../images/{img_name}"
+                    img["srcset"] = ""
                 chapter["content"] = str(soup)
 
     with open("content_img.json", "w") as f:
