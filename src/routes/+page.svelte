@@ -36,7 +36,7 @@
         class="lg:text-[6vw] md:text-[6vw] text-5xl z-10 text-shadow font-lexend-peta text-white pt-10"
       >
         <p>Union</p>
-        <p class="lg:-mt-10">Zindabad</p>
+        <p class="">Zindabad</p>
       </div>
 
       <div class="lg:hidden md:hidden w-[80vw] -my-4 self-end">
