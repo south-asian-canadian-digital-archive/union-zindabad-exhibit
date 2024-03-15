@@ -27,17 +27,25 @@
   });
 </script>
 
-<div class="bg-[url(/cover_bg.jpg)] p-20 bg-cover">
-  <div class="flex overflow-clip justify-center">
-    <div class="flex flex-col gap-16 z-10 -mr-[10vw]">
-      <div class="text-[6vw] text-shadow font-lexend-peta text-white pt-10">
+<div class="bg-[url(/cover_bg.jpg)] p-6 md:p-20 lg:p-20 bg-cover h-full">
+  <div
+    class="flex flex-col lg:flex-row md:flex-row overflow-clip justify-center"
+  >
+    <div class="flex flex-col lg:gap-16 md:gap-16 z-10 md:-mr-[10vw] lg:-mr-[10vw]">
+      <div
+        class="lg:text-[6vw] md:text-[6vw] text-5xl z-10 text-shadow font-lexend-peta text-white pt-10"
+      >
         <p>Union</p>
-        <p class="-mt-10">Zindabad</p>
+        <p class="lg:-mt-10">Zindabad</p>
       </div>
 
-      <div class="bg-black rounded-lg w-fit ml-[10vw]">
+      <div class="lg:hidden md:hidden w-[80vw] -my-4 self-end">
+        <img src="/cover_right.png" alt="" class="" />
+      </div>
+
+      <div class="bg-black rounded-lg w-fit md:ml-[10vw] lg:ml-[10vw] z-10">
         <button
-          class="rounded-lg p-2 px-6 text-lg font-bold bg-white border border-black text-[#000000D1] -translate-y-1 translate-x-1 hover:-translate-y-2 hover:translate-x-2 transition-all duration-500 ease-in-out"
+          class="rounded-lg p-2 px-6 md:text-lg lg:text-lg font-bold bg-white border border-black text-[#000000D1] -translate-y-1 translate-x-1 hover:-translate-y-2 hover:translate-x-2 transition-all duration-500 ease-in-out"
           on:click={() => {
             goto("/cover");
           }}>Read Book</button
@@ -45,7 +53,7 @@
       </div>
 
       <div
-        class="font-bold text-left text-white max-w-[25vw] flex flex-col gap-4"
+        class="font-bold lg:text-base md:text-base mt-8 lg:mt-0 md:mt-0 text-xs text-left text-white md:max-w-[25vw] lg:max-w-[25vw] flex flex-col gap-4"
       >
         <p>
           Explore the South Asian Canadian Digital Archive
@@ -66,8 +74,10 @@
       </div>
     </div>
 
-    <div>
-      <div class="relative h-fit min-w-[55vw]">
+    <div class="h-full">
+      <div
+        class="relative h-fit min-w-[55vw] hidden lg:block md:block rounded-[20px] object-cover"
+      >
         <img src="/cover_right.png" alt="" class="w-full" />
         <p
           class="absolute text-[#f5f5f5] text-right text-xs font-bold bottom-4 right-4 max-w-[70%]"
@@ -79,13 +89,13 @@
         </p>
       </div>
 
-      <div class="flex w-full justify-evenly pt-14">
+      <div class="flex w-full justify-evenly lg:pt-14 md:pt-14 py-8 items-center h-full">
         {#each logos as logo}
           <a href={logo.link} target="_blank">
             <img
               src={logo.image}
               alt={logo.name}
-              class="w-[12vw] h-auto object-contain"
+              class="lg:w-[12vw] md:w-[12vw] w-[25vw] h-auto object-contain"
             />
           </a>
         {/each}
