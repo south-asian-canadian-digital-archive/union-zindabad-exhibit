@@ -65,6 +65,9 @@
   let initFocus = false;
 
   onMount(() => {
+
+    if ($page.params.id === "cover") goto("../");
+
     setTimeout(() => {
       navOpen = false;
 

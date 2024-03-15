@@ -15,7 +15,7 @@
 </script>
 
 <nav
-  class="sticky top-0 bg-white z-[999] pb-6 pt-9 px-10 flex lg:flex-row md:flex-row flex-col items-center justify-between text-black font-semibold shadow-md"
+  class="sticky top-0 bg-white z-[999] pb-6 pt-9 px-10 mb-2 flex lg:flex-row md:flex-row flex-col items-center justify-between text-black font-semibold shadow-md"
 >
   <div class="w-full lg:w-fit md:w-fit">
     <a class="" href="https://sacda.ca/index.php">
