@@ -74,8 +74,8 @@
       initFocus = true;
       setTimeout(() => {
         initFocus = false;
-      }, 2000);
-    }, 1200);
+      }, 4000);
+    }, 6000);
   });
 
   let scrollY: number;
