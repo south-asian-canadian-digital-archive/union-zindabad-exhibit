@@ -31,7 +31,9 @@
   <div
     class="flex flex-col lg:flex-row md:flex-row overflow-clip justify-center"
   >
-    <div class="flex flex-col lg:gap-16 md:gap-16 z-10 md:-mr-[10vw] lg:-mr-[10vw]">
+    <div
+      class="flex flex-col lg:gap-16 md:gap-16 z-10 md:-mr-[10vw] lg:-mr-[10vw]"
+    >
       <div
         class="lg:text-[6vw] md:text-[6vw] text-5xl z-10 text-shadow font-lexend-peta text-white pt-10"
       >
@@ -47,30 +49,9 @@
         <button
           class="rounded-lg p-2 px-6 md:text-lg lg:text-lg font-bold bg-white border border-black text-[#000000D1] -translate-y-1 translate-x-1 hover:-translate-y-2 hover:translate-x-2 transition-all duration-500 ease-in-out"
           on:click={() => {
-            goto("/cover");
+            goto("/south-asian-canadian-labour-history-project");
           }}>Read Book</button
         >
-      </div>
-
-      <div
-        class="font-bold lg:text-base md:text-base mt-8 lg:mt-0 md:mt-0 text-xs text-left text-white md:max-w-[25vw] lg:max-w-[25vw] flex flex-col gap-4"
-      >
-        <p>
-          Explore the South Asian Canadian Digital Archive
-          <a href="https://sacda.ca">
-            View all SACDA archival collections and exhibits (www.sacda.ca)
-          </a>
-        </p>
-
-        <p>
-          Find labour history archival images View the full <a
-            href="https://sacda.ca/index.php/Detail/collections/746"
-          >
-            South Asian Canadian Labour History archival image collection</a
-          >
-        </p>
-
-        <p>Supported by the Province of British Columbia</p>
       </div>
     </div>
 
@@ -89,7 +70,9 @@
         </p>
       </div>
 
-      <div class="flex w-full justify-evenly lg:pt-14 md:pt-14 py-8 items-center h-full">
+      <div
+        class="flex w-full justify-evenly lg:pt-14 md:pt-14 py-8 items-center h-full"
+      >
         {#each logos as logo}
           <a href={logo.link} target="_blank">
             <img
@@ -105,9 +88,11 @@
 </div>
 
 <style type="postcss">
-  p a {
+
+  /* p a {
     @apply border-b border-b-white transition-all ease-in-out duration-200 hover:border-b-transparent;
-  }
+  } */
+
   .text-shadow {
     text-shadow: -12px 11px 4px rgba(0, 0, 0, 0.25);
     /* font-family: 'Lexend Peta', sans-serif !important; */

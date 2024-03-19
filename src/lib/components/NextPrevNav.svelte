@@ -16,7 +16,8 @@
       class:rounded-br-lg={!full}
       on:click={() => {
         $direction = -1;
-        goto(`../${prevPage}`, { noScroll: !scrollOnNav });
+        if (prevPage === "cover") goto("../");
+        else goto(`../${prevPage}`, { noScroll: !scrollOnNav });
       }}
     >
       <span

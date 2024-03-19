@@ -14,6 +14,11 @@
   export let lastIdx = 0;
 
   const changePage = (id: string, idx: number) => {
+    if (id === "cover") {
+      goto("/");
+      return;
+    };
+
     if (idx > lastIdx) $direction = 1;
     else if (idx < lastIdx) $direction = -1;
     else $direction = 1;
