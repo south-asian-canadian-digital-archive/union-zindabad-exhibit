@@ -83,7 +83,7 @@
 
 <svelte:window bind:scrollY />
 
-<div class="flex flex-col items-center mb-12">
+<div class="flex flex-col items-center mb-12 selection:bg-black selection:text-white">
   <button on:click={() => goto("../")} class="w-full relative">
     <img
       src="../title.jpg"

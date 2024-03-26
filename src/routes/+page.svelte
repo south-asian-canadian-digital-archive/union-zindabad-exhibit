@@ -20,6 +20,11 @@
       link: "https://www.labourheritagecentre.ca/",
       image: "/images/preface_img_0.png",
     },
+    {
+      name: "Province of British Columbia",
+      link: "https://www2.gov.bc.ca/",
+      image: "https://sacda.ca/themes/sacda/assets/pawtucket/graphics/footer/bc.svg",
+    }
   ];
 
   onMount(() => {
@@ -27,7 +32,7 @@
   });
 </script>
 
-<div class="bg-[url(/cover_bg.jpg)] p-6 md:p-20 lg:p-20 bg-cover h-full">
+<div class="bg-[url(/cover_bg.jpg)] p-6 md:p-20 lg:p-20 bg-cover h-full selection:bg-black selection:bg-opacity-50 selection:text-white">
   <div
     class="flex flex-col lg:flex-row md:flex-row overflow-clip justify-center"
   >
@@ -52,6 +57,15 @@
             goto("/south-asian-canadian-labour-history-project");
           }}>Read Book</button
         >
+      </div>
+      <div
+        class="font-bold lg:text-base md:text-base mt-8 lg:mt-0 md:mt-0 text-xs text-left text-white md:max-w-[25vw] lg:max-w-[25vw] flex flex-col gap-4"
+      >
+        Union Zindabad traces South Asian labor history in Canada through a
+        variety of lenses. Beginning with the migrations of the early twentieth
+        century, this book includes chapters on early migrants,
+        revolutionaries, unions, and the struggles of South Asian labor
+        activists and leaders.
       </div>
     </div>
 
@@ -78,7 +92,7 @@
             <img
               src={logo.image}
               alt={logo.name}
-              class="lg:w-[12vw] md:w-[12vw] w-[25vw] h-auto object-contain"
+              class="lg:w-[10vw] md:w-[10vw] w-[25vw] h-auto object-contain"
             />
           </a>
         {/each}
@@ -88,7 +102,6 @@
 </div>
 
 <style type="postcss">
-
   /* p a {
     @apply border-b border-b-white transition-all ease-in-out duration-200 hover:border-b-transparent;
   } */
