@@ -17,7 +17,7 @@
     if (id === "cover") {
       goto("/");
       return;
-    };
+    }
 
     if (idx > lastIdx) $direction = 1;
     else if (idx < lastIdx) $direction = -1;
@@ -55,17 +55,17 @@
 
 <div
   transition:slide={{ axis: mobile ? "y" : "x" }}
-  class="flex flex-col gap-1 items-start w-full"
+  class="flex flex-col gap-1 items-start w-full rounded-lg h-fit bg-white"
 >
   {#each contents as item, idxi}
     <button
-      class="hover:bg-gray-200 px-4 py-1 rounded transition-all ease-in-out duration-200 w-full lg:whitespace-nowrap max-w-[90vw] whitespace-normal text-left flex justify-between items-center"
+      class="hover:bg-gray-200 px-4 py-1 transition-all ease-in-out duration-200 w-full lg:whitespace-nowrap max-w-[90vw] whitespace-normal text-left flex justify-between items-center first:rounded-t-lg last:rounded-b-lg"
       class:font-semibold={current === item.id}
       class:bg-gray-200={current === item.id}
-      class:bg-gray-100={item.chapters && !(current === item.id)}
-      class:bg-gray-50={!item.chapters && !(current === item.id)}
       on:click={() => changePage(item.id, idxi)}
     >
+      <!-- class:bg-gray-100={item.chapters && !(current === item.id)}
+      class:bg-gray-50={!item.chapters && !(current === item.id)} -->
       {item.name}
 
       {#if item.chapters}
@@ -89,9 +89,9 @@
             class="pl-14 hover:bg-gray-200 px-4 py-1 rounded transition-all ease-in-out duration-200 w-full text-left lg:whitespace-nowrap max-w-[90vw] whitespace-normal"
             class:font-semibold={current === chapter.id}
             class:bg-gray-200={current === chapter.id}
-            class:bg-gray-50={!(current === chapter.id)}
             on:click={() => changePage(chapter.id, idxi + (idxc + 1) / 100)}
           >
+            <!-- class:bg-gray-50={!(current === chapter.id)} -->
             {chapter.name}
           </button>
         {/each}

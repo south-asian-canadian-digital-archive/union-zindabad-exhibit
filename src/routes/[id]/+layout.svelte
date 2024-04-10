@@ -65,7 +65,6 @@
   let initFocus = false;
 
   onMount(() => {
-
     if ($page.params.id === "cover") goto("../");
 
     setTimeout(() => {
@@ -83,7 +82,9 @@
 
 <svelte:window bind:scrollY />
 
-<div class="flex flex-col items-center mb-12 selection:bg-black selection:text-white">
+<div
+  class="flex flex-col items-center mb-12 selection:bg-black selection:text-white"
+>
   <button on:click={() => goto("../")} class="w-full relative">
     <img
       src="../title.jpg"
@@ -103,14 +104,14 @@
   </button>
 
   <!-- <div class="px-4 w-full"> -->
-    <NextPrevNav {nextPage} {prevPage} />
+  <NextPrevNav {nextPage} {prevPage} />
   <!-- </div> -->
 
   <main
     class="relative flex lg:flex-row md:flex-row flex-col justify-between pt-12 lg:px-20 md:px-20 gap-10 transition-all ease-in-out duration-200"
   >
     <button
-      class="absolute lg:left-4 md:left-4 lg:w-fit md:w-fit top-2 md:mt-8 md:pt-0.5 lg:mt-8 lg:pt-0.5 w-full flex items-center justify-center transition-all ease-in-out duration-200"
+      class="absolute lg:left-4 md:left-4 lg:w-fit md:w-fit top-2 md:mt-8 md:pt-0.5 lg:mt-8 lg:pt-0.5 w-full flex items-center justify-center gap-0 transition-all ease-in-out duration-200"
       on:click={() => {
         navOpen = !navOpen;
       }}
@@ -130,7 +131,7 @@
 
     {#if navOpen}
       <div
-        class="hidden lg:flex md:flex whitespace-nowrap relative z-[100] -ml-5 -mt-1"
+        class="hidden lg:flex md:flex whitespace-nowrap relative z-[100] -ml-6 -mt-1 h-fit rounded-tl-none rounded-lg p-1 from-[#9b4d3a] bg-gradient-to-l to-[#737f59]"
       >
         <Navitagion current={$page.params.id} />
       </div>
@@ -144,7 +145,7 @@
       <div
         in:fly={{ x: 500 * $direction, duration: 500 }}
         id="site-content"
-        class="text-lg text-left flex flex-col items-center transition-all ease-in-out duration-200 lg:max-w-[65vw] md:max-w-[65vw] max-w-[90vw]"
+        class="text-lg text-left flex flex-col items-center transition-all ease-in-out duration-200 lg:max-w-[55vw] md:max-w-[55vw] max-w-[90vw]"
       >
         <slot />
 
@@ -173,6 +174,10 @@
 <style type="postcss">
   :global(.site-content) {
     font-family: "brandon grotesque", sans-serif !important;
+  }
+
+  :global(.site-content img) {
+    @apply hover:-translate-y-2 hover:-translate-x-2 hover:rotate-1 transition-all ease-in-out duration-200;
   }
 
   :global(h2.entry-title) {
