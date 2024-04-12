@@ -65,14 +65,14 @@
             <button
               class="rounded-lg p-2 px-6 md:text-lg lg:text-lg font-bold bg-white border border-black text-[#000000D1] -translate-y-1 translate-x-1 hover:-translate-y-2 hover:translate-x-2 transition-all duration-500 ease-in-out"
             >
-              Visit the Exhibit
+            View the Collection
             </button>
           </a>
         </div>
       </div>
 
       <div
-        class="font-bold lg:text-base md:text-base mt-8 lg:mt-0 md:mt-0 text-xs text-left text-white md:max-w-[25vw] lg:max-w-[25vw] flex flex-col gap-4"
+        class="lg:text-base md:text-base mt-8 lg:mt-0 md:mt-0 text-xs text-left text-white md:max-w-[25vw] lg:max-w-[25vw] flex flex-col gap-4"
       >
         Union Zindabad traces South Asian labor history in Canada through a
         variety of lenses. Beginning with the migrations of the early twentieth
