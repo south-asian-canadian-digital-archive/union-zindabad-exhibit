@@ -5,6 +5,10 @@
  
 </script>
 
+<svelte:head>
+  <title>Union Zindabad!</title>
+</svelte:head>
+
 <Header />
 
 <slot />
