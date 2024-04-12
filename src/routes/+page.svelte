@@ -23,8 +23,9 @@
     {
       name: "Province of British Columbia",
       link: "https://www2.gov.bc.ca/",
-      image: "https://sacda.ca/themes/sacda/assets/pawtucket/graphics/footer/bc.svg",
-    }
+      image:
+        "https://sacda.ca/themes/sacda/assets/pawtucket/graphics/footer/bc.svg",
+    },
   ];
 
   onMount(() => {
@@ -32,49 +33,61 @@
   });
 </script>
 
-<div class="bg-[url(/cover_bg.jpg)] p-6 md:p-20 lg:p-20 bg-cover h-full selection:bg-black selection:bg-opacity-50 selection:text-white">
+<div
+  class="bg-[url(/cover_bg.jpg)] p-6 md:p-20 lg:p-20 bg-cover h-full selection:bg-black selection:bg-opacity-50 selection:text-white"
+>
   <div
-    class="flex flex-col lg:flex-row md:flex-row overflow-clip justify-center"
+    class="flex flex-col lg:flex-row md:flex-row overflow-clip justify-center gap-16"
   >
-    <div
-      class="flex flex-col lg:gap-16 md:gap-16 z-10 md:-mr-[10vw] lg:-mr-[10vw]"
-    >
-      <div
-        class="lg:text-[6vw] md:text-[6vw] text-5xl z-10 text-shadow font-lexend-peta text-white pt-10"
-      >
+    <div class="flex flex-col gap-10 pt-10">
+      <div class="text-7xl z-10 text-shadow font-lexend-peta text-white pt-10">
         <p>Union</p>
-        <p class="">Zindabad</p>
+        <p class="">Zindabad!</p>
+        <p class="text-sm pt-4">South Asian Canadian Labour History in British Columbia</p>
       </div>
 
       <div class="lg:hidden md:hidden w-[80vw] -my-4 self-end">
         <img src="/cover_right.png" alt="" class="" />
       </div>
 
-      <div class="bg-black rounded-lg w-fit md:ml-[10vw] lg:ml-[10vw] z-10">
-        <button
-          class="rounded-lg p-2 px-6 md:text-lg lg:text-lg font-bold bg-white border border-black text-[#000000D1] -translate-y-1 translate-x-1 hover:-translate-y-2 hover:translate-x-2 transition-all duration-500 ease-in-out"
-          on:click={() => {
-            goto("/south-asian-canadian-labour-history-project");
-          }}>Read Book</button
-        >
+      <div class="w-full flex justify-evenly pt-4">
+        <div class="bg-black rounded-lg w-fit z-10">
+          <button
+            class="rounded-lg p-2 px-6 md:text-lg lg:text-lg font-bold bg-white border border-black text-[#000000D1] -translate-y-1 translate-x-1 hover:-translate-y-2 hover:translate-x-2 transition-all duration-500 ease-in-out"
+            on:click={() => {
+              goto("/south-asian-canadian-labour-history-project");
+            }}>Read Book</button
+          >
+        </div>
+
+        <div class="bg-black rounded-lg w-fit z-10">
+          <a href="https://sacda.ca/index.php/Detail/collections/746">
+            <button
+              class="rounded-lg p-2 px-6 md:text-lg lg:text-lg font-bold bg-white border border-black text-[#000000D1] -translate-y-1 translate-x-1 hover:-translate-y-2 hover:translate-x-2 transition-all duration-500 ease-in-out"
+            >
+              Visit the Exhibit
+            </button>
+          </a>
+        </div>
       </div>
+
       <div
         class="font-bold lg:text-base md:text-base mt-8 lg:mt-0 md:mt-0 text-xs text-left text-white md:max-w-[25vw] lg:max-w-[25vw] flex flex-col gap-4"
       >
         Union Zindabad traces South Asian labor history in Canada through a
         variety of lenses. Beginning with the migrations of the early twentieth
-        century, this book includes chapters on early migrants,
-        revolutionaries, unions, and the struggles of South Asian labor
-        activists and leaders.
+        century, this book includes chapters on early migrants, revolutionaries,
+        unions, and the struggles of South Asian labor activists and leaders.
       </div>
     </div>
 
-    <div class="h-full">
+    <div class="h-full max-w-[50vw]">
       <div
-        class="relative h-fit min-w-[55vw] hidden lg:block md:block rounded-[20px] object-cover"
+        class="relative h-fit hidden lg:block md:block rounded-[20px] object-cover"
       >
         <img src="/cover_right.png" alt="" class="w-full" />
         <p
+          hidden
           class="absolute text-[#f5f5f5] text-right text-xs font-bold bottom-4 right-4 max-w-[70%]"
         >
           On March 20, 1943 District union official Nigel Morgan reported that
