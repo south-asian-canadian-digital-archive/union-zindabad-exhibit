@@ -6,6 +6,7 @@ export default {
     extend: {
       fontFamily: {
         'lexend-peta': ['Lexend Peta', 'sans-serif'],
+        'inter': ['Inter', 'sans-serif'],
       },
     },
   },
