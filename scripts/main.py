@@ -66,5 +66,21 @@ def get_images():
         json.dump(urls, f, indent=4)
 
 
+def get_slugs():
+    final = []
+    with open("content.json", "r") as file:
+        data = json.load(file)
+        for i in data:
+            print(json.dumps({"id": i["id"]}, indent=4))
+            final.append({"id": i["id"]})
+            if "chapters" in i.keys():
+                for j in i["chapters"]:
+                    print(json.dumps({"id": j["id"]}, indent=4))
+                    final.append({"id": j["id"]})
+    with open("slugs.json", "w") as file:
+        json.dump(final, file, indent=4)
+
+
 if __name__ == "__main__":
-    get_images()
+    # get_images()
+    get_slugs()
