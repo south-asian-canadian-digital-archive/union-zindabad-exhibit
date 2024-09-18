@@ -52,7 +52,7 @@
         <button
           class="rounded-lg p-2 px-6 font-bold bg-white border border-black text-[#000000D1] -translate-y-1 translate-x-1 hover:-translate-y-2 hover:translate-x-2 transition-all duration-500 ease-in-out"
           on:click={() => {
-            goto("/south-asian-canadian-labour-history-project");
+            goto("./south-asian-canadian-labour-history-project");
           }}>Read Book</button
         >
         <a href="https://sacda.ca/index.php/Detail/collections/746">
@@ -73,7 +73,6 @@
         unions, and the struggles of South Asian labor activists and leaders.
       </div>
     </div>
-
   </div>
 </div>
 

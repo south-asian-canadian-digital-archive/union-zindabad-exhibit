@@ -81,6 +81,24 @@ def get_slugs():
         json.dump(final, file, indent=4)
 
 
+def get_list():
+    final = []
+    with open("content.json", "r") as file:
+        data = json.load(file)
+        for i in data:
+            print("/" + i["id"])
+            final.append("/" + i["id"])
+            if "chapters" in i.keys():
+                for j in i["chapters"]:
+                    print("/" + j["id"])
+                    final.append("/" + j["id"])
+                
+    with open("slugs_lis.txt", "w") as file:
+        json.dump(final, file)
+
+
+
 if __name__ == "__main__":
     # get_images()
-    get_slugs()
+    # get_slugs()
+    get_list()
