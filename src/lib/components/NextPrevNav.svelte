@@ -1,6 +1,10 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
+  import { PUBLIC_MODE } from "$env/static/public";
   import { direction } from "$lib/utils/nav.store";
+  // import MODE from the .env file
+
+
 
   export let nextPage: string | null;
   export let prevPage: string | null;
@@ -16,14 +20,16 @@
       class:rounded-br-lg={!full}
       on:click={() => {
         $direction = -1;
-        if (prevPage === "cover") goto("../");
-        else goto(`../${prevPage}`, { noScroll: !scrollOnNav });
+        if (prevPage === "cover") goto("/");
+        else goto(`/${prevPage}`, { noScroll: !scrollOnNav });
       }}
     >
-      <span
-        class="fa fa-arrow-left group-hover:-translate-x-2 transition-all ease-in-out duration-300"
-      ></span>
-      Last Page
+      <!-- <a href="../{prevPage === 'cover'? '' : PUBLIC_MODE === 'PRD' ? `${prevPage}.html` : prevPage}"> -->
+        <span
+          class="fa fa-arrow-left group-hover:-translate-x-2 transition-all ease-in-out duration-300"
+        ></span>
+        Last Page
+      <!-- </a> -->
     </button>
   {:else}
     <div />
@@ -37,13 +43,15 @@
       class:rounded-bl-lg={!full}
       on:click={() => {
         $direction = 1;
-        goto(`../${nextPage}`, { noScroll: !scrollOnNav });
+        goto(`/${nextPage}`, { noScroll: !scrollOnNav });
       }}
     >
-      Next Page
-      <span
-        class="fa fa-arrow-right group-hover:translate-x-2 transition-all ease-in-out duration-300"
-      ></span>
+      <!-- <a href="../{PUBLIC_MODE === 'PRD' ? `${nextPage}.html` : nextPage}"> -->
+        Next Page
+        <span
+          class="fa fa-arrow-right group-hover:translate-x-2 transition-all ease-in-out duration-300"
+        ></span>
+      <!-- </a> -->
     </button>
   {:else}
     <div />

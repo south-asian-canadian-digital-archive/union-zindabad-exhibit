@@ -8,6 +8,7 @@
   import { onMount } from "svelte";
   import { direction, pageIdx } from "$lib/utils/nav.store";
   import NextPrevNav from "$lib/components/NextPrevNav.svelte";
+  import { base } from "$app/paths";
 
   // let $pageIdx = 0;
 
@@ -85,9 +86,9 @@
 <div
   class="flex flex-col items-center mb-12 selection:bg-black selection:text-white"
 >
-  <button on:click={() => goto("../")} class="w-full relative">
+  <button on:click={() => goto("/")} class="w-full relative">
     <img
-      src="../title.jpg"
+      src="{base}/title.jpg"
       id="banner"
       class="w-full h-20 lg:object-cover lg:object-top md:object-cover md:object-top"
       alt=""

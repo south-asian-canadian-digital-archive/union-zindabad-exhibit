@@ -1,5 +1,6 @@
 <script>
   import { goto } from "$app/navigation";
+  import { base } from "$app/paths";
   import { onMount } from "svelte";
 
   const logos = [
@@ -34,12 +35,11 @@
 </script>
 
 <div
-  class="bg-[url(/images/cover_img_0.jpg)] bg-cover h-full selection:bg-black selection:bg-opacity-50 selection:text-white"
+  class="bg-[url({base}/images/cover_img_0.jpg)] bg-cover h-full selection:bg-black selection:bg-opacity-50 selection:text-white"
 >
   <div
     class="bg-cover h-screen w-full p-8 flex flex-col justify-end text-white bg-[#5c5c5c] bg-opacity-20"
   >
-    <!-- /images/cover_img_0.jpg -->
     <div class="flex flex-col items-center gap-4 pt-10">
       <div class="text-8xl z-10 font-mono pt-10 font-bold">
         <p>UnionZindabad!</p>
