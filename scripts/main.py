@@ -101,4 +101,5 @@ def get_list():
 if __name__ == "__main__":
     # get_images()
     # get_slugs()
-    get_list()
+    # get_list()
+    pass

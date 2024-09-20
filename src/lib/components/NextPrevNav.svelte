@@ -1,6 +1,6 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
-  import { PUBLIC_MODE } from "$env/static/public";
+  import { base } from "$app/paths";
   import { direction } from "$lib/utils/nav.store";
   // import MODE from the .env file
 
@@ -20,8 +20,8 @@
       class:rounded-br-lg={!full}
       on:click={() => {
         $direction = -1;
-        if (prevPage === "cover") goto("/");
-        else goto(`/${prevPage}`, { noScroll: !scrollOnNav });
+        if (prevPage === "cover") goto(`${base}/`);
+        else goto(`${base}/${prevPage}`, { noScroll: !scrollOnNav });
       }}
     >
       <!-- <a href="../{prevPage === 'cover'? '' : PUBLIC_MODE === 'PRD' ? `${prevPage}.html` : prevPage}"> -->
@@ -43,7 +43,7 @@
       class:rounded-bl-lg={!full}
       on:click={() => {
         $direction = 1;
-        goto(`/${nextPage}`, { noScroll: !scrollOnNav });
+        goto(`${base}/${nextPage}`, { noScroll: !scrollOnNav });
       }}
     >
       <!-- <a href="../{PUBLIC_MODE === 'PRD' ? `${nextPage}.html` : nextPage}"> -->

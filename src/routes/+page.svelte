@@ -35,7 +35,7 @@
 </script>
 
 <div
-  class="bg-[url({base}/images/cover_img_0.jpg)] bg-cover h-full selection:bg-black selection:bg-opacity-50 selection:text-white"
+  class="bg-[url(/images/cover_img_0.jpg)] bg-cover h-full selection:bg-black selection:bg-opacity-50 selection:text-white"
 >
   <div
     class="bg-cover h-screen w-full p-8 flex flex-col justify-end text-white bg-[#5c5c5c] bg-opacity-20"

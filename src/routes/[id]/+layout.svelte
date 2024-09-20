@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ContentList from "$lib/utils/contents";
+  import ContentList from "$lib/utils/contents_";
   import { page } from "$app/stores";
   import { goto } from "$app/navigation";
   import Navitagion from "$lib/components/Navitagion.svelte";
@@ -86,7 +86,7 @@
 <div
   class="flex flex-col items-center mb-12 selection:bg-black selection:text-white"
 >
-  <button on:click={() => goto("/")} class="w-full relative">
+  <button on:click={() => goto(`${base}/`)} class="w-full relative">
     <img
       src="{base}/title.jpg"
       id="banner"

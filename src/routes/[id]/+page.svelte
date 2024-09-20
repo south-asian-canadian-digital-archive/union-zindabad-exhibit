@@ -1,7 +1,7 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import { page } from "$app/stores";
-  import ContentList from "$lib/utils/contents";
+  import ContentList from "$lib/utils/contents_";
   import { pageIdx } from "$lib/utils/nav.store";
 
   // let $pageIdx = 0;

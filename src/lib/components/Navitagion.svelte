@@ -3,19 +3,18 @@
   import { goto } from "$app/navigation";
   import { slide } from "svelte/transition";
   import { onMount } from "svelte";
-  import { page } from "$app/stores";
   import { direction } from "$lib/utils/nav.store";
+  import { base } from "$app/paths";
 
   export let current = "";
   export let mobile = false;
-  // export let direction;
 
   let expanded = {} as Record<string, boolean>;
   export let lastIdx = 0;
 
   const changePage = (id: string, idx: number) => {
     if (id === "cover") {
-      goto("/");
+      goto(`${base}/`);
       return;
     }
 
@@ -26,7 +25,7 @@
     lastIdx = idx;
     current = id;
 
-    goto(`/${id}`, { noScroll: true });
+    goto(`${base}/${id}`, { noScroll: true });
   };
 
   const updateExpandedNav = () => {
