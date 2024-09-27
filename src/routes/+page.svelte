@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { goto } from "$app/navigation";
   import { base } from "$app/paths";
   import { onMount } from "svelte";
@@ -29,13 +29,20 @@
     },
   ];
 
+  let coverELm: HTMLElement;
+
   onMount(() => {
-    // goto("./cover");
+    setTimeout(() => {
+      if (coverELm) {
+        coverELm.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 1000);
   });
 </script>
 
 <div
   class="bg-[url(/images/cover_img_0.jpg)] bg-cover h-full selection:bg-black selection:bg-opacity-50 selection:text-white"
+  bind:this={coverELm}
 >
   <div
     class="bg-cover h-screen w-full p-8 flex flex-col justify-end text-white bg-[#5c5c5c] bg-opacity-20"
