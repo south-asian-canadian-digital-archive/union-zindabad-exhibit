@@ -119,12 +119,12 @@
     >
       <!-- w-3 break-words uppercase top-0 pt-10 -->
       <span
-        class="absolute from-[#9b4d3a] text-white bg-gradient-to-l to-[#737f59] p-2 pr-9 rounded-t-lg -rotate-90 mt-24 bottome-0 uppercase"
+        class="absolute from-[#9b4d3a] text-white bg-gradient-to-l to-[#737f59] p-2 pr-9 rounded-t-lg lg:-rotate-90 md:-rotate-90 md:mt-24 lg:mt-24 uppercase"
         >Contents</span
       >
       <Tooltip bind:focus={initFocus} text={navOpen ? "Close" : "Navigation"}>
         <span
-          class="fa fa-angle-double-left lg:text-white p-3 rounded-full transition-all ease-in-out duration-200"
+          class="fa fa-angle-double-left text-white p-3 translate-y-11 lg:translate-y-0 md:translate-y-0 rounded-full transition-all ease-in-out duration-200"
           class:rotate-180={navOpen}
         ></span>
       </Tooltip>
@@ -175,6 +175,11 @@
 <style type="postcss">
   :global(.site-content) {
     font-family: "brandon grotesque", sans-serif !important;
+    @apply max-w-[90vw] mx-auto;
+  }
+
+  :global(.entry-content) {
+    @apply max-w-[90vw] mx-auto;
   }
 
   :global(.site-content img) {
@@ -190,7 +195,7 @@
   }
 
   :global(.site-content img) {
-    @apply rounded-lg;
+    @apply rounded-lg max-w-[90vw] lg:max-w-full md:max-w-full;
   }
 
   :global(.site-content, .entry-content) {
@@ -198,18 +203,22 @@
   }
 
   :global(.site-content figure) {
-    @apply flex items-center flex-col py-8 lg:max-w-[50vw] md:max-w-[50vw];
+    @apply flex items-center flex-col py-8 lg:max-w-[50vw] md:max-w-[50vw] max-w-[90vw] mx-auto;
   }
 
   :global(.site-content figcaption) {
-    @apply text-center text-sm pt-2;
+    @apply text-center text-sm pt-2 break-words max-w-[90vw] mx-auto;
   }
 
   :global(.site-content li) {
-    @apply pl-4;
+    @apply pl-4 max-w-[90vw] mx-auto;
   }
   :global(.site-content p) {
-    @apply py-3;
+    @apply py-3 max-w-[90vw] mx-auto;
+  }
+
+  :global(.site-content p iframe) {
+    @apply max-w-[90vw] mx-auto;
   }
 
   :global(.site-content img.aligncenter) {
