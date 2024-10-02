@@ -41,16 +41,21 @@
 </script>
 
 <div
-  class="bg-[url(/images/cover_img_0.jpg)] bg-cover h-full selection:bg-black selection:bg-opacity-50 selection:text-white"
+  class="bg-[url(/images/cover_img_0.jpg)] bg-cover bg-center w-screen h-full selection:bg-black selection:bg-opacity-50 selection:text-white"
   bind:this={coverELm}
 >
   <div
     class="bg-cover h-screen w-full p-8 flex flex-col justify-end text-white bg-[#5c5c5c] bg-opacity-20"
   >
     <div class="flex flex-col items-center gap-4 pt-10">
-      <div class="text-8xl z-10 font-mono pt-10 font-bold">
-        <p>UnionZindabad!</p>
-        <p class="text-base text-center">
+      <div
+        class="lg:text-8xl md:text-8xl text-7xl text-center z-10 font-mono pt-10 font-bold"
+      >
+        <p class="*:bg-black *:bg-opacity-50 *:inline-block *:md:flex md:flex lg:flex flex-row">
+          <span>Union</span>
+          <span>Zindabad!</span>
+        </p>
+        <p class="text-base text-center bg-black bg-opacity-50">
           South Asian Canadian Labour History in British Columbia
         </p>
       </div>
@@ -72,7 +77,7 @@
       </div>
 
       <div
-        class="lg:text-base md:text-base mt-8 lg:mt-0 md:mt-0 text-xs text-center max-w-[70vw] flex flex-col gap-4"
+        class="lg:text-base md:text-base text-xl text-center md:max-w-[60%] lg:max-w-[60%] inline-block bg-black bg-opacity-50"
       >
         Union Zindabad traces South Asian labor history in Canada through a
         variety of lenses. Beginning with the migrations of the early twentieth
